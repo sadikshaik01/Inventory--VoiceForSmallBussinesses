@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root { font-family: var(--font-sans); color: #173f35; background: #f6f7f2; }
+body { margin: 0; min-width: 320px; }
+button { cursor: pointer; }
+button:disabled { cursor: wait; }
+button:focus-visible, a:focus-visible { outline: 3px solid #71953f; outline-offset: 4px; }
+::selection { background: #d8efad; color: #173f35; }
+
+@layer components {
+  .panel { @apply rounded-2xl border border-[#e1e6da] bg-white shadow-[0_3px_16px_#173f3503]; }
+  .input { @apply block min-h-12 w-full rounded-xl border border-slate-200 bg-white px-3.5 py-3 text-base text-slate-800 outline-none focus:border-[#668e48] focus:ring-2 focus:ring-[#668e4825] read-only:bg-slate-50; }
+  .btn { @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-primary { @apply bg-[#173f35] text-white hover:bg-[#245646]; }
+  .btn-secondary { @apply border border-[#dce3d3] bg-white text-[#173f35] hover:bg-[#f3f6ee]; }
+  .btn-danger { @apply bg-[#ad3434] text-white hover:bg-[#922929]; }
+}
